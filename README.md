@@ -71,6 +71,11 @@ The path and version number of the package are defined within the __galaxybootst
 
 More information in building and installing Maven projects can be found at [Maven Install Plugin](http://maven.apache.org/plugins/maven-install-plugin/).
 
-Step 1 (TODO 3.2) of this question involves creating a new GalaxyInstance by filling in the appropriate URL and API Key.  This information is obtained from galaxy-bootstrap instead of being hardcoded into a String.
+Step 2 (TODO 3.2) of this question involves creating a new GalaxyInstance by filling in the appropriate URL and API Key.  This information is obtained from galaxy-bootstrap instead of being hardcoded into a String.
 
 Once you are finished each of the tasks, please run the tests.  This will first download the Galaxy code and build Galaxy, then adjust some of the Galaxy settings and start Galaxy running.  After this point, the tests will run.  Please monitor the Console for information on what is happening.
+
+More Examples
+-------------
+
+More examples on how to use blend4j as well as galaxy-bootstrap can be found on the [blend4j](https://github.com/jmchilton/blend4j) site as well as teh [tests for blend4j](https://github.com/jmchilton/blend4j/tree/master/src/test/java/com/github/jmchilton/blend4j/galaxy).
