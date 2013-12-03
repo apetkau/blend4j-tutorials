@@ -4,8 +4,9 @@
   <artifactId>blend4j-tutorial-questions</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <dependencies>
-  <!-- TODO 1: Please insert dependencies for blend4j here. -->
+  <!-- TODO 1.1: Please insert dependencies for blend4j here. -->
   
+  <!-- TODO 3.1: Please insert dependency for galaxy-boostrap here. -->
    <dependency>
 		<groupId>junit</groupId>
 		<artifactId>junit</artifactId>

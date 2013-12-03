@@ -78,7 +78,7 @@ public class Blend4JQuestion2
 	@Test
 	public void testUploadFile() throws URISyntaxException
 	{
-		// TODO 1: Move setup code to setup() method and use the given class variables
+		// TODO 2.1: Move setup code to setup() method and use the given class variables
 		
 		// create Galaxy Library
 		String libraryName = "Question2" + System.currentTimeMillis(); // change library name on each run
@@ -96,11 +96,11 @@ public class Blend4JQuestion2
 		
 		ClientResponse uploadResponse = librariesClient.uploadFile(persistedLibrary.getId(), upload);
 		
-		// TODO 2: Instead of printing the success status, add an 'assertEquals' statement to verify 
+		// TODO 2.2: Instead of printing the success status, add an 'assertEquals' statement to verify 
 		//  the appropriate response
 		assertEquals(ClientResponse.Status.OK, uploadResponse.getClientResponseStatus());
 		
-		// TODO 3: Instead of visually inspecting the Galaxy data libraries to make
+		// TODO 2.3: Instead of visually inspecting the Galaxy data libraries to make
 		//	sure the file has been uploaded, use the fileUploadedTo() method and an assertion
 		// 	to verify the file has been uploaded.
 		assertTrue(fileUploadedTo(fileToUpload.getName(), libraryName));

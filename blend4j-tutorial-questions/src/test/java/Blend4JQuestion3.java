@@ -76,7 +76,6 @@ public class Blend4JQuestion3
 	{
 		// TODO 3.2: Setup galaxy instance with the apiKey and URL from
 		// the Galaxy bootstrapper
-		galaxyInstance = GalaxyInstanceFactory.get(galaxyURL, apiKey);
 		
 		URI path = Blend4JQuestion3.class.getResource("test.fasta").toURI();
 		fileToUpload = new File(path);

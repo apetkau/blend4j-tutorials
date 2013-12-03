@@ -14,10 +14,10 @@ public class Blend4JQuestion1
 {
 	public static void main(String[] args) throws URISyntaxException
 	{
-		// TODO 2: Place Galaxy URL here
+		// TODO 1.2: Place Galaxy URL here
 		String galaxyURL = "";
 		
-		// TODO 3: Place Galaxy Admin API Key here
+		// TODO 1.3: Place Galaxy Admin API Key here
 		String apiKey = "";
 		
 		GalaxyInstance galaxyInstance = GalaxyInstanceFactory.get(galaxyURL, apiKey);
@@ -28,7 +28,7 @@ public class Blend4JQuestion1
 		Library persistedLibrary = librariesClient.createLibrary(library);
 		System.out.println("Created Library " + persistedLibrary.getName() + " with id=" + persistedLibrary.getId());
 		
-		// TODO 4: Add path to 'src/main/resources/test.fasta' file here
+		// TODO 1.4: Add path to 'src/main/resources/test.fasta' file here
 		File fileToUpload = new File("");
 		
 		// upload file to Library
