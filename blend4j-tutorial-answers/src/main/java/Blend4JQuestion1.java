@@ -14,11 +14,11 @@ public class Blend4JQuestion1
 {
 	public static void main(String[] args) throws URISyntaxException
 	{
-		// TODO 2: Place Galaxy URL here
+		// TODO 1.2: Place Galaxy URL here
 		// This changes depending on how Galaxy is setup, but should look similar to below
 		String galaxyURL = "http://localhost";
 		
-		// TODO 3: Place Galaxy Admin API Key here
+		// TODO 1.3: Place Galaxy Admin API Key here
 		// This changes depending on how Galaxy is setup, but should look similar to below
 		// This must be a key of a user setup within the "admin_users" parameter of the universe_wsgi.ini file
 		String apiKey = "eef2de0463a9d6f5e2b609d57d09a6c7";
@@ -31,7 +31,7 @@ public class Blend4JQuestion1
 		Library persistedLibrary = librariesClient.createLibrary(library);
 		System.out.println("Created Library " + persistedLibrary.getName() + " with id=" + persistedLibrary.getId());
 		
-		// TODO 4: Add path to 'src/main/resources/test.fasta' file here
+		// TODO 1.4: Add path to 'src/main/resources/test.fasta' file here
 		// You can either use the full path, or use the below command to get the path
 		//	(assumes test.fasta within the same package as Blend4JQuestion1).
 		URI path = Blend4JQuestion1.class.getResource("test.fasta").toURI();
