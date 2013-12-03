@@ -78,4 +78,4 @@ Once you are finished each of the tasks, please run the tests.  This will first 
 More Examples
 -------------
 
-More examples on how to use blend4j as well as galaxy-bootstrap can be found on the [blend4j](https://github.com/jmchilton/blend4j) site as well as teh [tests for blend4j](https://github.com/jmchilton/blend4j/tree/master/src/test/java/com/github/jmchilton/blend4j/galaxy).
+More examples on how to use blend4j as well as galaxy-bootstrap can be found on the [blend4j](https://github.com/jmchilton/blend4j) site as well as the [tests for blend4j](https://github.com/jmchilton/blend4j/tree/master/src/test/java/com/github/jmchilton/blend4j/galaxy).
