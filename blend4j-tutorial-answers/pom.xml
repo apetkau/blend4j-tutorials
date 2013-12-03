@@ -12,6 +12,12 @@
  </dependency>
  
  <dependency>
+  <groupId>com.github.jmchilton.galaxybootstrap</groupId>
+  <artifactId>galaxybootstrap</artifactId>
+  <version>0.3.0-rc2-SNAPSHOT-apetkau</version>
+ </dependency>
+ 
+ <dependency>
 	<groupId>junit</groupId>
 	<artifactId>junit</artifactId>
 	<version>4.11</version>

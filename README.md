@@ -43,3 +43,7 @@ Question 3
 ----------
 
 Questions 2 involved running code against a pre-configured Galaxy and hardcoding a URL and API Key.  It would be nice to automate this process by having a clean instance of Galaxy setup each time we wish to run these test suites.  This can be accomplished with the [galaxy-bootstrap](https://github.com/jmchilton/galaxy-bootstrap) project.
+
+Galaxy bootstrap can be installed by adding the appropriate dependency within the pom.xml file (and Maven will go and download the correct version when necessary).
+
+The first task involves using the information provided by Galaxy bootstrap to setup our galaxy instance, instead of hardcoding the URL and API Key.
