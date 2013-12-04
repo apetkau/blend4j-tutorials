@@ -11,13 +11,6 @@
    <version>0.1-alpha-1</version>
  </dependency>
  
- <!-- TODO 3.1: Please insert dependency for galaxy-boostrap here. -->
- <dependency>
-  <groupId>com.github.jmchilton.galaxybootstrap</groupId>
-  <artifactId>galaxybootstrap</artifactId>
-  <version>0.3.0-rc2-SNAPSHOT-apetkau</version>
- </dependency>
- 
  <dependency>
 	<groupId>junit</groupId>
 	<artifactId>junit</artifactId>
