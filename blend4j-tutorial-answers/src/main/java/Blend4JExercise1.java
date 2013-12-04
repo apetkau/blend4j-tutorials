@@ -10,7 +10,7 @@ import com.github.jmchilton.blend4j.galaxy.beans.Library;
 import com.github.jmchilton.blend4j.galaxy.beans.LibraryContent;
 import com.sun.jersey.api.client.ClientResponse;
 
-public class Blend4JQuestion1
+public class Blend4JExercise1
 {
 	public static void main(String[] args) throws URISyntaxException
 	{
@@ -27,14 +27,14 @@ public class Blend4JQuestion1
 		
 		// create Galaxy Library
 		LibrariesClient librariesClient = galaxyInstance.getLibrariesClient();
-		Library library = new Library("Question1");
+		Library library = new Library("Exercise1");
 		Library persistedLibrary = librariesClient.createLibrary(library);
 		System.out.println("Created Library " + persistedLibrary.getName() + " with id=" + persistedLibrary.getId());
 		
 		// TODO 1.4: Add path to 'src/main/resources/test.fasta' file here
 		// You can either use the full path, or use the below command to get the path
-		//	(assumes test.fasta within the same package as Blend4JQuestion1).
-		URI path = Blend4JQuestion1.class.getResource("test.fasta").toURI();
+		//	(assumes test.fasta within the same package as Blend4JExercise1).
+		URI path = Blend4JExercise1.class.getResource("test.fasta").toURI();
 		File fileToUpload = new File(path);
 		
 		// upload file to Library

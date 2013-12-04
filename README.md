@@ -13,36 +13,36 @@ To get started with these tutorials, please run the following command:
 This creates a __blend4j-tutorials__ directory containing the code and other necessary files.  This directory is structured like:
 
 	$ ls blend4j-tutorials
-	blend4j-tutorial-answers  blend4j-tutorial-questions  README.md
+	blend4j-tutorial-answers  blend4j-tutorial-exercises  README.md
 
-Each of these subdirectories is a Maven project containing the questions and answers respectively.  To import these projects into eclipse please go to __File > Import...__.  From here select __Maven > Existing Maven Projects__ and click __Next__.  From here click __Browse__ and select the _blend4j-tutorials_ as the root directory.  This should list the _questions_ and _answers_ projects.  Please click __Finish__ to import.
+Each of these subdirectories is a Maven project containing the exercises and answers respectively.  To import these projects into eclipse please go to __File > Import...__.  From here select __Maven > Existing Maven Projects__ and click __Next__.  From here click __Browse__ and select the _blend4j-tutorials_ as the root directory.  This should list the _exercises_ and _answers_ projects.  Please click __Finish__ to import.
 
-The code for each of the questions should be located within src/main/java.  Please follow along below for each of the questions.
+The code for each of the exercises should be located within src/main/java.  Please follow along below for each of the exercises.
 
-Question 1
+Exercise 1
 ----------
 
-This question walks you through adding blend4j to your project and uploading data to a Galaxy library.  The tasks are listed withing the pom.xml and src/main/java/Blend4JQuestion1.java as 'TODO' comments.
+This exercise walks you through adding blend4j to your project and uploading data to a Galaxy library.  The tasks are listed withing the pom.xml and src/main/java/Blend4JExercise1.java as 'TODO' comments.
 
-The first TODO involves adding blend4j to your project within the pom.xml file.  Please refer to the __Jars__ section within the [blend4j project](https://github.com/jmchilton/blend4j) for more information on what to add.
+The first step (TODO 1.1) involves adding blend4j to your project within the pom.xml file.  Please refer to the __Jars__ section within the [blend4j project](https://github.com/jmchilton/blend4j) for more information on what to add.
 
-The remaining TODOs involve hooking up to your running Galaxy instance and defining the file to upload.
+The remaining TODOs (1.2, 1.3, and 1.4) involve hooking up to your running Galaxy instance and defining the file to upload.
 
 When finished, please go to the __Shared Data__ section of your running Galaxy instance.  You should see your newly created Data library along with the uploaded file.
 
-Question 2
+Exercise 2
 ----------
 
-Question 1 involved creating a data library using blend4j, then visually looking for this library within the Galaxy web interface.  This question will re-factor that data library creation code into a test case using [JUnit](http://junit.org).  The code for this question, instead of being located within src/main/java, is located within src/test/java/Blend4JQuestion2.java.
+Exercise 1 involved creating a data library using blend4j, then visually looking for this library within the Galaxy web interface.  This exercise will re-factor that data library creation code into a test case using [JUnit](http://junit.org).  The code for this exercise, instead of being located within src/main/java, is located within src/test/java/Blend4JExercise2.java.
 
-The first step (TODO 1) involes moving some of the setup code to a setup() method that has been annotated with @Before.  The second and third steps (TODO 2 and 3) involve writing [Assert](http://junit.sourceforge.net/javadoc/org/junit/Assert.html) statements to programatically verify that the data library was succsessfully created and the file uploaded correctly.
+The first step (TODO 2.1) involes moving some of the setup code to a setup() method that has been annotated with @Before.  The second and third steps (TODO 2.2 and 2.3) involve writing [Assert](http://junit.sourceforge.net/javadoc/org/junit/Assert.html) statements to programatically verify that the data library was succsessfully created and the file uploaded correctly.
 
 When finished, please run the JUnit test and verify everything passes.
 
-Question 3
+Exercise 3
 ----------
 
-Questions 2 involved running code against a pre-configured Galaxy and hardcoding a URL and API Key.  It would be nice to automate this process by having a clean instance of Galaxy setup each time we wish to run these test suites.  This can be accomplished with the [galaxy-bootstrap](https://github.com/jmchilton/galaxy-bootstrap) project.
+Exercise 2 involved running code against a pre-configured Galaxy and hardcoding a URL and API Key.  It would be nice to automate this process by having a clean instance of Galaxy setup each time we wish to run these test suites.  This can be accomplished with the [galaxy-bootstrap](https://github.com/jmchilton/galaxy-bootstrap) project.
 
 Galaxy bootstrap can be installed by adding the appropriate dependency within the pom.xml file (and Maven will go and download the correct version when necessary).  However, I created a fork of galaxy-bootstrap and added a vew extra print statements to help see what's going on behind the scenes.  This custom version can be built and installed using the following commands:
 
@@ -61,7 +61,7 @@ Once the package is built it is copied over to your local Maven repository, whic
 	galaxybootstrap-0.3.0-rc2-SNAPSHOT-apetkau.jar              galaxybootstrap-0.3.0-rc2-SNAPSHOT-apetkau.pom              _maven.repositories
 	galaxybootstrap-0.3.0-rc2-SNAPSHOT-apetkau.jar.lastUpdated  galaxybootstrap-0.3.0-rc2-SNAPSHOT-apetkau.pom.lastUpdated
 
-The path and version number of the package are defined within the __galaxybootstrap/pom.xml__ file and must also be entered as a dependency entry within the __blend4j-tutorials/blend4j-tutorial-questions/pom.xml__ file.  Please copy and paste the following information to __blend4j-tutorials/blend4j-tutorial-questions/pom.xml__ in order to setup the appropriate dependency (TODO 3.1):
+The path and version number of the package are defined within the __galaxybootstrap/pom.xml__ file and must also be entered as a dependency entry within the __blend4j-tutorials/blend4j-tutorial-exercises/pom.xml__ file.  Please copy and paste the following information to __blend4j-tutorials/blend4j-tutorial-exercises/pom.xml__ in order to setup the appropriate dependency (TODO 3.1):
 
 	 <dependency>
 	  <groupId>com.github.jmchilton.galaxybootstrap</groupId>
@@ -71,7 +71,7 @@ The path and version number of the package are defined within the __galaxybootst
 
 More information in building and installing Maven projects can be found at [Maven Install Plugin](http://maven.apache.org/plugins/maven-install-plugin/).
 
-Step 2 (TODO 3.2) of this question involves creating a new GalaxyInstance by filling in the appropriate URL and API Key.  This information is obtained from galaxy-bootstrap instead of being hardcoded into a String.
+Step 2 (TODO 3.2) of this exercise involves creating a new GalaxyInstance by filling in the appropriate URL and API Key within the __blend4j-tutorials/blend4j-tutorial-exercises/src/test/java/Blend4JExercise3.java__ file.  This information is obtained from galaxy-bootstrap instead of being hardcoded into a String.
 
 Once you are finished each of the tasks, please run the tests.  This will first download the Galaxy code and build Galaxy, then adjust some of the Galaxy settings and start Galaxy running.  After this point, the tests will run.  Please monitor the Console for information on what is happening.
 

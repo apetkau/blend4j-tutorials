@@ -18,7 +18,7 @@ import com.github.jmchilton.blend4j.galaxy.beans.Library;
 import com.github.jmchilton.blend4j.galaxy.beans.LibraryContent;
 import com.sun.jersey.api.client.ClientResponse;
 
-public class Blend4JQuestion2
+public class Blend4JExercise2
 {
 	private GalaxyInstance galaxyInstance = null;
 	private File fileToUpload = null;
@@ -26,12 +26,7 @@ public class Blend4JQuestion2
 	@Before
 	public void setup() throws URISyntaxException
 	{
-		String galaxyURL = "http://localhost";
-		String apiKey = "insert_key_here";
-		galaxyInstance = GalaxyInstanceFactory.get(galaxyURL, apiKey);
-		
-		URI path = Blend4JQuestion2.class.getResource("test.fasta").toURI();
-		fileToUpload = new File(path);
+
 	}
 	
 	private Map<String,LibraryContent> createLibraryContentMap(List<LibraryContent> libraryContents)
@@ -79,9 +74,15 @@ public class Blend4JQuestion2
 	public void testUploadFile() throws URISyntaxException
 	{
 		// TODO 2.1: Move setup code to setup() method and use the given class variables
+		String galaxyURL = "http://localhost";
+		String apiKey = "insert_key_here";
+		GalaxyInstance galaxyInstance = GalaxyInstanceFactory.get(galaxyURL, apiKey);
+		
+		URI path = Blend4JExercise2.class.getResource("test.fasta").toURI();
+		File fileToUpload = new File(path);
 		
 		// create Galaxy Library
-		String libraryName = "Question2" + System.currentTimeMillis(); // change library name on each run
+		String libraryName = "Exercise2" + System.currentTimeMillis(); // change library name on each run
 		LibrariesClient librariesClient = galaxyInstance.getLibrariesClient();
 		Library library = new Library(libraryName);
 		Library persistedLibrary = librariesClient.createLibrary(library);
@@ -98,11 +99,9 @@ public class Blend4JQuestion2
 		
 		// TODO 2.2: Instead of printing the success status, add an 'assertEquals' statement to verify 
 		//  the appropriate response
-		assertEquals(ClientResponse.Status.OK, uploadResponse.getClientResponseStatus());
 		
 		// TODO 2.3: Instead of visually inspecting the Galaxy data libraries to make
 		//	sure the file has been uploaded, use the fileUploadedTo() method and an assertion
 		// 	to verify the file has been uploaded.
-		assertTrue(fileUploadedTo(fileToUpload.getName(), libraryName));
 	}
 }

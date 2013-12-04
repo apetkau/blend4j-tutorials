@@ -27,7 +27,7 @@ import com.github.jmchilton.galaxybootstrap.GalaxyData.User;
 import com.github.jmchilton.galaxybootstrap.GalaxyProperties;
 import com.sun.jersey.api.client.ClientResponse;
 
-public class Blend4JQuestion3
+public class Blend4JExercise3
 {
 	private static File fileToUpload = null;
 	
@@ -76,9 +76,8 @@ public class Blend4JQuestion3
 	{
 		// TODO 3.2: Setup galaxy instance with the apiKey and URL from
 		// the Galaxy bootstrapper
-		galaxyInstance = GalaxyInstanceFactory.get(galaxyURL, apiKey);
 		
-		URI path = Blend4JQuestion3.class.getResource("test.fasta").toURI();
+		URI path = Blend4JExercise3.class.getResource("test.fasta").toURI();
 		fileToUpload = new File(path);
 	}
 	
@@ -127,7 +126,7 @@ public class Blend4JQuestion3
 	public void testUploadFile() throws URISyntaxException
 	{		
 		// create Galaxy Library
-		String libraryName = "Question2" + System.currentTimeMillis(); // change library name on each run
+		String libraryName = "Exercise2" + System.currentTimeMillis(); // change library name on each run
 		LibrariesClient librariesClient = galaxyInstance.getLibrariesClient();
 		Library library = new Library(libraryName);
 		Library persistedLibrary = librariesClient.createLibrary(library);

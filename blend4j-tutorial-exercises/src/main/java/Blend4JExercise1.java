@@ -10,7 +10,7 @@ import com.github.jmchilton.blend4j.galaxy.beans.Library;
 import com.github.jmchilton.blend4j.galaxy.beans.LibraryContent;
 import com.sun.jersey.api.client.ClientResponse;
 
-public class Blend4JQuestion1
+public class Blend4JExercise1
 {
 	public static void main(String[] args) throws URISyntaxException
 	{
@@ -24,7 +24,7 @@ public class Blend4JQuestion1
 		
 		// create Galaxy Library
 		LibrariesClient librariesClient = galaxyInstance.getLibrariesClient();
-		Library library = new Library("Question1");
+		Library library = new Library("Exercise1");
 		Library persistedLibrary = librariesClient.createLibrary(library);
 		System.out.println("Created Library " + persistedLibrary.getName() + " with id=" + persistedLibrary.getId());
 		
