@@ -13,11 +13,11 @@ To get started with these tutorials, please run the following command:
 This creates a __blend4j-tutorials__ directory containing the code and other necessary files.  This directory is structured like:
 
 	$ ls blend4j-tutorials
-	blend4j-tutorial-answers  blend4j-tutorial-exercises  README.md
+	answers  exercises  README.md
 
-Each of these subdirectories is a Maven project containing the exercises and answers respectively.  To import these projects into eclipse please go to __File > Import...__.  From here select __Maven > Existing Maven Projects__ and click __Next__.  From here click __Browse__ and select the _blend4j-tutorials_ as the root directory.  This should list the _exercises_ and _answers_ projects.  Please click __Finish__ to import.
+Each of these subdirectories contains Maven projects with the exercises and answers respectively.  To import these projects into eclipse please go to __File > Import...__.  From here select __Maven > Existing Maven Projects__ and click __Next__.  From here click __Browse__ and select the _blend4j-tutorials_ as the root directory.  This should list the _exercises_ and _answers_ projects.  Please click __Finish__ to import.
 
-The code for each of the exercises should be located within src/main/java.  Please follow along below for each of the exercises.
+The code for each of the exercises should be located within src/main/java or src/test/java.  Please follow along below for each of the exercises.
 
 Exercise 1
 ----------
@@ -33,7 +33,7 @@ When finished, please go to the __Shared Data__ section of your running Galaxy i
 Exercise 2
 ----------
 
-Exercise 1 involved creating a data library using blend4j, then visually looking for this library within the Galaxy web interface.  This exercise will re-factor that data library creation code into a test case using [JUnit](http://junit.org).  The code for this exercise, instead of being located within src/main/java, is located within src/test/java/Blend4JExercise2.java.
+Exercise 1 involved creating a data library using blend4j, then visually looking for this library within the Galaxy web interface.  This exercise will re-factor that data library creation code into a test case using [JUnit](http://junit.org).  The code for this exercise, instead of being located within src/main/java, is located within __src/test/java/Blend4JExercise2.java__.
 
 The first step (TODO 2.1) involes moving some of the setup code to a setup() method that has been annotated with @Before.  The second and third steps (TODO 2.2 and 2.3) involve writing [Assert](http://junit.sourceforge.net/javadoc/org/junit/Assert.html) statements to programatically verify that the data library was succsessfully created and the file uploaded correctly.
 
@@ -71,7 +71,7 @@ The path and version number of the package are defined within the __galaxybootst
 
 More information in building and installing Maven projects can be found at [Maven Install Plugin](http://maven.apache.org/plugins/maven-install-plugin/).
 
-Step 2 (TODO 3.2) of this exercise involves creating a new GalaxyInstance by filling in the appropriate URL and API Key within the __blend4j-tutorials/blend4j-tutorial-exercises/src/test/java/Blend4JExercise3.java__ file.  This information is obtained from galaxy-bootstrap instead of being hardcoded into a String.
+Step 2 (TODO 3.2) of this exercise involves creating a new GalaxyInstance by filling in the appropriate URL and API Key within the __src/test/java/Blend4JExercise3.java__ file.  This information is obtained from galaxy-bootstrap instead of being hardcoded into a String.
 
 Once you are finished each of the tasks, please run the tests.  This will first download the Galaxy code and build Galaxy, then adjust some of the Galaxy settings and start Galaxy running.  After this point, the tests will run.  Please monitor the Console for information on what is happening.
 
