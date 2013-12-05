@@ -1,0 +1,27 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>blend4j-answer-3</groupId>
+  <artifactId>blend4j-answer-3</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+  <!-- TODO 1.1: Please insert dependencies for blend4j here. -->
+  <dependency>
+   <groupId>com.github.jmchilton.blend4j</groupId>
+   <artifactId>blend4j</artifactId>
+   <version>0.1-alpha-1</version>
+ </dependency>
+ 
+ <!-- TODO 3.1: Please insert dependency for galaxy-boostrap here. -->
+ <dependency>
+  <groupId>com.github.jmchilton.galaxybootstrap</groupId>
+  <artifactId>galaxybootstrap</artifactId>
+  <version>0.3.0-rc2-SNAPSHOT-apetkau</version>
+ </dependency>
+ 
+ <dependency>
+	<groupId>junit</groupId>
+	<artifactId>junit</artifactId>
+	<version>4.11</version>
+</dependency>
+  </dependencies>
+</project>

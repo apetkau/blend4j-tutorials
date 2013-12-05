@@ -1,16 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>blend4j-tutorial-questions</groupId>
-  <artifactId>blend4j-tutorial-questions</artifactId>
+  <groupId>blend4j-exercise-1</groupId>
+  <artifactId>blend4j-exercise-1</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <dependencies>
   <!-- TODO 1.1: Please insert dependencies for blend4j here. -->
-  
-  <!-- TODO 3.1: Please insert dependency for galaxy-boostrap here. -->
-   <dependency>
-		<groupId>junit</groupId>
-		<artifactId>junit</artifactId>
-		<version>4.11</version>
-	</dependency>
+ 
+ <dependency>
+	<groupId>junit</groupId>
+	<artifactId>junit</artifactId>
+	<version>4.11</version>
+</dependency>
   </dependencies>
 </project>

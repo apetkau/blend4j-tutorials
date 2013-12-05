@@ -1,16 +1,13 @@
 import static org.junit.Assert.*;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.github.jmchilton.blend4j.galaxy.GalaxyInstance;
@@ -19,66 +16,18 @@ import com.github.jmchilton.blend4j.galaxy.LibrariesClient;
 import com.github.jmchilton.blend4j.galaxy.beans.FileLibraryUpload;
 import com.github.jmchilton.blend4j.galaxy.beans.Library;
 import com.github.jmchilton.blend4j.galaxy.beans.LibraryContent;
-import com.github.jmchilton.galaxybootstrap.BootStrapper;
-import com.github.jmchilton.galaxybootstrap.BootStrapper.GalaxyDaemon;
-import com.github.jmchilton.galaxybootstrap.DownloadProperties;
-import com.github.jmchilton.galaxybootstrap.GalaxyData;
-import com.github.jmchilton.galaxybootstrap.GalaxyData.User;
-import com.github.jmchilton.galaxybootstrap.GalaxyProperties;
 import com.sun.jersey.api.client.ClientResponse;
 
-public class Blend4JExercise3
+public class Blend4JExercise2
 {
-	private static File fileToUpload = null;
+	private GalaxyInstance galaxyInstance = null;
+	private File fileToUpload = null;
 	
-	private static GalaxyInstance galaxyInstance;
-	
-	private static GalaxyDaemon galaxyDaemon;
-	
-	@BeforeClass
-	public static void setupGalaxy() throws IOException, URISyntaxException
+	@Before
+	public void setup() throws URISyntaxException
 	{
-	    BootStrapper bootStrapper = new BootStrapper(DownloadProperties.forGalaxyCentral());
-	    bootStrapper.setVerbose(true); // this method not in main version, so don't try to use it
-	    bootStrapper.setupGalaxy();
-	    final GalaxyProperties galaxyProperties = 
-	      new GalaxyProperties()
-	            .assignFreePort()
-	            .configureNestedShedTools();
-	    final GalaxyData galaxyData = new GalaxyData();
-	    final User adminUser = new User("admin@localhost");
-	    galaxyData.getUsers().add(adminUser);
-	    galaxyProperties.setAdminUser("admin@localhost");
-	    String adminAPIKey = adminUser.getApiKey();
-	    
-	    galaxyProperties.setAppProperty("allow_library_path_paste", "true");
-	    galaxyDaemon = bootStrapper.run(galaxyProperties, galaxyData);
-	    
-	    if (!galaxyDaemon.waitForUp())
-	    {
-	    	fail("Could not start Galaxy for tests");
-	    }
-	    
-	    int galaxyPort = galaxyProperties.getPort();
-	    String galaxyURL = "http://localhost:" + galaxyPort + "/";
-	    
-	    setupGalaxyInstance(adminAPIKey, galaxyURL);
-	}
-	
-	@AfterClass
-	public static void destroyGalaxy()
-	{
-		galaxyDaemon.stop();
-		galaxyDaemon.waitForDown();
-	}
-	
-	private static void setupGalaxyInstance(String apiKey, String galaxyURL) throws URISyntaxException
-	{
-		// TODO 3.2: Setup galaxy instance with the apiKey and URL from
-		// the Galaxy bootstrapper
-		
-		URI path = Blend4JExercise3.class.getResource("test.fasta").toURI();
-		fileToUpload = new File(path);
+		galaxyInstance = null;
+		fileToUpload = null;
 	}
 	
 	private Map<String,LibraryContent> createLibraryContentMap(List<LibraryContent> libraryContents)
@@ -124,7 +73,16 @@ public class Blend4JExercise3
 	
 	@Test
 	public void testUploadFile() throws URISyntaxException
-	{		
+	{
+		// TODO 2.1: Move setup code to setup() method and use the given class variables
+		String galaxyURL = "http://localhost";
+		String apiKey = "insert_key_here";
+		GalaxyInstance galaxyInstance = GalaxyInstanceFactory.get(galaxyURL, apiKey);
+		
+		URI path = Blend4JExercise2.class.getResource("test.fasta").toURI();
+		File fileToUpload = new File(path);
+		// end setup
+		
 		// create Galaxy Library
 		String libraryName = "Exercise2" + System.currentTimeMillis(); // change library name on each run
 		LibrariesClient librariesClient = galaxyInstance.getLibrariesClient();
@@ -140,8 +98,12 @@ public class Blend4JExercise3
 		upload.setName(fileToUpload.getName());
 		
 		ClientResponse uploadResponse = librariesClient.uploadFile(persistedLibrary.getId(), upload);
-
-		assertEquals(ClientResponse.Status.OK, uploadResponse.getClientResponseStatus());
-		assertTrue(fileUploadedTo(fileToUpload.getName(), libraryName));
+		
+		// TODO 2.2: Instead of printing the success status, add an 'assertEquals' statement to verify 
+		//  the appropriate response
+		
+		// TODO 2.3: Instead of visually inspecting the Galaxy data libraries to make
+		//	sure the file has been uploaded, use the fileUploadedTo() method and an assertion
+		// 	to verify the file has been uploaded.
 	}
 }
